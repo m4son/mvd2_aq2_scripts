@@ -270,6 +270,9 @@ def collect_frags_deaths( line ):
                         if len(m.groups()) == 1:
                                 vic=m.group(1)
                                 add_death(vic,k)
+                                if _debug:
+                                        string = "STATS: DEATH \t{:>15s}   ->   \t{:>15s}\t\t({})".format(vic,vic,k)
+                                        color_print(string,"cyan")
                                 PlayerRounds(vic)
                         else:
                                 vic,att=[m.group(1),m.group(2)]
